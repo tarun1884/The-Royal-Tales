@@ -14,65 +14,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Manrope:wght@400;600;700&display=swap"
         rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        serif: ['"Cormorant Garamond"', 'serif'],
-                        sans: ['Manrope', 'sans-serif']
-                    },
-                    colors: {
-                        ivory: '#F7F3EE',
-                        paper: '#FFFDFC',
-                        sand: '#D9C2A6',
-                        bronze: '#B4875C',
-                        ink: '#1E1A17',
-                        taupe: '#5C534C',
-                        line: '#E7DED4',
-                        gold: '#B8966B'
-                    },
-                    boxShadow: {
-                        luxe: '0 16px 48px rgba(30, 26, 23, 0.10)',
-                        soft: '0 10px 30px rgba(30, 26, 23, 0.08)'
-                    }
-                }
-            }
-        };
-    </script>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background:
-                radial-gradient(circle at top left, rgba(217, 194, 166, 0.24), transparent 26%),
-                linear-gradient(180deg, #fffdfb 0%, #f7f3ee 100%);
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-
-        .reveal.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .reveal {
-                opacity: 1;
-                transform: none;
-                transition: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/luxury-landing.css">
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -105,114 +49,163 @@
             "Timeline management",
             "Bespoke catering",
             "Day-of coordination"
-          ],
-          "sameAs": [
-            "https://www.facebook.com/share/1BW5B6yEWa/?mibextid=wwXIfr",
-            "https://in.pinterest.com/royaltalese/_profile/",
-            "https://www.instagram.com/royal_tales_event_management?igsh=MW5tYjJrdXppNndycw%3D%3D&utm_source=qr",
-            "https://www.linkedin.com/company/royal-tales/posts/?feedView=all"
+          ]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is included in your full-service wedding management?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Vendor curation, event design, timeline management, hospitality and bespoke catering coordination, and day-of coordination. We take ownership of the execution end to end, so you are not managing vendors or schedules yourself."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why do you only offer full-service planning?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We do not offer day-of-only or partial coordination. Every wedding is managed as a complete service so the standard stays consistent at every stage."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the minimum investment?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our weddings begin at a planning budget of 15 Lakhs. That threshold reflects the scope of an elevated, professionally managed celebration from start to finish."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How far in advance should we book?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We accept weddings with at least six months of lead time so the planning, design, and logistical details can be shaped properly rather than rushed."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which locations do you serve?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Noida and Delhi NCR, plus selected destination wedding locations depending on fit and scope."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What happens after I message you?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We begin by confirming whether your date and scope are a fit. From there the process moves through clarifying the vision, curating and designing the celebration, and executing it with day-of coordination."
+              }
+            }
           ]
         }
     </script>
 </head>
 
-<body class="font-sans text-ink antialiased">
-    <header class="sticky top-0 z-40 border-b border-black/5 bg-paper/80 backdrop-blur-xl">
-        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10 lg:px-16">
-            <a href="index.html" class="flex items-center gap-3">
-                <img src="images/The RoyalTales logo.png" alt="Royal Tales logo" class="h-12 w-auto md:h-14">
-            </a>
-            <nav class="hidden items-center gap-8 text-sm font-semibold uppercase tracking-[0.18em] text-taupe md:flex">
-                <a href="index.html" class="transition hover:text-ink">Home</a>
-                <a href="About Us.html" class="transition hover:text-ink">About</a>
-                <a href="event-blog.html" class="transition hover:text-ink">Blogs</a>
-                <a href="contact.html" class="transition hover:text-ink">Contact</a>
-            </nav>
-            <a href="#availability"
-                class="hidden rounded-full bg-ink px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-paper shadow-luxe transition duration-300 hover:-translate-y-0.5 hover:bg-bronze md:inline-flex">
-                Check Your Date's Availability
-            </a>
+<body>
+    <header class="lp-header">
+        <div class="container lp-header__inner">
+            <img src="images/The RoyalTales logo.png" alt="Royal Tales" class="lp-header__logo" width="180" height="56">
+            <div class="lp-header__actions">
+                <a href="tel:+919211453330" class="lp-header__phone">+91 92114 53330</a>
+                <a href="https://wa.me/919211453330?text=Hi%20Royal%20Tales%2C%20I%20would%20like%20to%20check%20your%20availability%20for%20my%20wedding%20date."
+                    target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                    Check Your Date
+                </a>
+            </div>
         </div>
     </header>
 
     <main>
-        <section class="overflow-hidden">
-            <div
-                class="mx-auto grid min-h-[calc(100vh-88px)] max-w-7xl items-center gap-14 px-6 py-16 md:px-10 lg:grid-cols-[1.02fr_0.98fr] lg:px-16 lg:py-20">
-                <div class="reveal max-w-2xl">
-                    <p class="mb-5 text-xs font-semibold uppercase tracking-[0.34em] text-bronze md:text-sm">
-                        Luxury Wedding Planner in Noida
-                    </p>
-                    <h1 class="font-serif text-5xl font-semibold leading-[0.9] tracking-[-0.04em] md:text-7xl">
-                        You focus on the romance. We’ll orchestrate the flawless execution.
-                    </h1>
-                    <p class="mt-8 max-w-xl text-base leading-8 text-taupe md:text-lg">
+        <section class="hero">
+            <div class="container hero__inner">
+                <div class="reveal">
+                    <p class="hero__eyebrow">Luxury Wedding Planner in Noida</p>
+                    <h1>You focus on the romance. We’ll orchestrate the flawless execution.</h1>
+                    <p class="hero__copy">
                         Royal Tales offers full-service wedding management in Noida for couples who want a beautifully
                         designed, impeccably managed celebration without spending 200+ hours chasing vendors, comparing
                         quotes, refining timelines, and absorbing avoidable stress.
                     </p>
-                    <p class="mt-6 max-w-xl text-base leading-8 text-taupe md:text-lg">
+                    <p class="hero__copy">
                         From vendor curation and event design to timeline management, bespoke catering, and polished
                         day-of coordination, every moving part is handled with discretion, precision, and taste.
                     </p>
-                    <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-                        <a href="#availability"
-                            class="inline-flex items-center justify-center rounded-full bg-ink px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-paper shadow-luxe transition duration-300 hover:-translate-y-0.5 hover:bg-bronze">
+                    <div class="hero__actions">
+                        <a href="https://wa.me/919211453330?text=Hi%20Royal%20Tales%2C%20I%20would%20like%20to%20check%20your%20availability%20for%20my%20wedding%20date."
+                            target="_blank" rel="noopener" class="btn btn--primary">
+                            <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
+                            </svg>
                             Check Your Date's Availability
                         </a>
-                        <p class="text-sm uppercase tracking-[0.18em] text-taupe">
-                            Full-service planning only
-                        </p>
+                        <p class="hero__note">One message. No forms.</p>
                     </div>
                 </div>
 
-                <div class="reveal relative">
-                    <div class="absolute -left-8 top-10 hidden h-32 w-32 rounded-full bg-sand/40 blur-3xl lg:block"></div>
-                    <div class="absolute -right-8 bottom-10 hidden h-40 w-40 rounded-full bg-bronze/20 blur-3xl lg:block"></div>
-                    <div class="relative overflow-hidden rounded-[2rem] bg-[#e9ddd2] shadow-luxe">
-                        <img src="images/rt 8.jpg" alt="Luxury destination wedding setup by Royal Tales"
-                            class="aspect-[4/5] w-full object-cover transition duration-700 hover:scale-[1.02]">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 right-6 rounded-[1.5rem] border border-white/30 bg-paper/80 p-5 backdrop-blur">
-                            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-bronze">
-                                Editorial minimalism. White-glove execution.
-                            </p>
-                            <p class="mt-2 text-sm leading-7 text-taupe">
-                                Built for affluent, busy professionals planning a refined wedding in Noida or across
-                                Delhi NCR.
-                            </p>
+                <div class="reveal hero__media">
+                    <div class="hero__frame">
+                        <img src="images/rt 8.jpg" alt="Luxury wedding setup designed by Royal Tales" fetchpriority="high"
+                            decoding="async">
+                        <div class="hero__caption">
+                            <strong>Editorial minimalism. White-glove execution.</strong>
+                            <p>Built for affluent, busy professionals planning a refined wedding in Noida or across
+                                Delhi NCR.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="border-t border-line">
-            <div class="mx-auto grid max-w-7xl gap-14 px-6 py-20 md:px-10 lg:grid-cols-2 lg:gap-20 lg:px-16">
-                <div class="reveal">
-                    <p class="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-bronze md:text-sm">
-                        The Real Problem
-                    </p>
-                    <h2 class="font-serif text-4xl font-semibold leading-tight tracking-[-0.03em] md:text-5xl">
-                        A luxury wedding loses its magic the moment it starts feeling like a second job.
-                    </h2>
+        <section class="trust">
+            <div class="container">
+                <div class="trust__grid reveal">
+                    <div class="trust__item">
+                        <strong>₹15 Lakhs+</strong>
+                        <span>Starting Investment</span>
+                    </div>
+                    <div class="trust__item">
+                        <strong>6 Months</strong>
+                        <span>Minimum Lead Time</span>
+                    </div>
+                    <div class="trust__item">
+                        <strong>Full-Service</strong>
+                        <span>Planning Only</span>
+                    </div>
+                    <div class="trust__item">
+                        <strong>Noida &amp; NCR</strong>
+                        <span>Region Served</span>
+                    </div>
                 </div>
-                <div class="reveal space-y-8 text-base leading-8 text-taupe md:text-lg">
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container split">
+                <div class="reveal">
+                    <p class="eyebrow">The Real Problem</p>
+                    <h2>A luxury wedding loses its magic the moment it starts feeling like a second job.</h2>
+                </div>
+                <div class="reveal split__body">
                     <div>
-                        <h3 class="font-serif text-2xl font-semibold text-ink md:text-3xl">
-                            DIY planning quietly becomes operational overload
-                        </h3>
-                        <p class="mt-4">
+                        <h3>DIY planning quietly becomes operational overload</h3>
+                        <p>
                             Between vendor follow-ups, design decisions, budget revisions, timeline changes, guest
                             logistics, and family expectations, the planning process can drain the joy from an
                             engagement long before the celebration begins.
                         </p>
                     </div>
                     <div>
-                        <h3 class="font-serif text-2xl font-semibold text-ink md:text-3xl">
-                            Full-service wedding management restores the experience
-                        </h3>
-                        <p class="mt-4">
+                        <h3>Full-service wedding management restores the experience</h3>
+                        <p>
                             We create structure where there is noise, discernment where there are endless options, and
                             calm where there would otherwise be chaos. You remain present for the romance. We take
                             ownership of the execution behind it.
@@ -222,53 +215,49 @@
             </div>
         </section>
 
-        <section class="border-t border-line bg-paper/70">
-            <div class="mx-auto max-w-7xl px-6 py-20 md:px-10 lg:px-16">
-                <div class="reveal max-w-3xl">
-                    <p class="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-bronze md:text-sm">
-                        Are We A Match?
-                    </p>
-                    <h2 class="font-serif text-4xl font-semibold leading-tight tracking-[-0.03em] md:text-5xl">
-                        Our approach is intentionally selective so every wedding receives uncompromised attention.
-                    </h2>
-                    <p class="mt-6 text-base leading-8 text-taupe md:text-lg">
+        <section class="section section--tint">
+            <div class="container">
+                <div class="reveal section-head">
+                    <p class="eyebrow">Are We A Match?</p>
+                    <h2>Our approach is intentionally selective so every wedding receives uncompromised attention.</h2>
+                    <p class="lede">
                         We are best suited to couples who value beauty, discretion, strategic guidance, and seamless
                         execution from the first planning call to the final farewell.
                     </p>
                 </div>
 
-                <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-                    <article class="reveal rounded-[1.75rem] border border-line bg-paper p-8 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-luxe">
-                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-bronze">Investment</p>
-                        <h3 class="mt-5 font-serif text-3xl font-semibold text-ink">Starting at ₹15 Lakhs</h3>
-                        <p class="mt-4 leading-8 text-taupe">
+                <div class="card-grid card-grid--4">
+                    <article class="reveal card">
+                        <p class="card__label">Investment</p>
+                        <h3>Starting at ₹15 Lakhs</h3>
+                        <p>
                             Our weddings begin at a planning budget designed for clients who want an elevated,
                             professionally managed experience from start to finish.
                         </p>
                     </article>
 
-                    <article class="reveal rounded-[1.75rem] border border-line bg-paper p-8 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-luxe">
-                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-bronze">Lead Time</p>
-                        <h3 class="mt-5 font-serif text-3xl font-semibold text-ink">6 Months Minimum</h3>
-                        <p class="mt-4 leading-8 text-taupe">
+                    <article class="reveal card">
+                        <p class="card__label">Lead Time</p>
+                        <h3>6 Months Minimum</h3>
+                        <p>
                             We accept weddings with at least six months of lead time so the planning, design, and
                             logistical details can be shaped properly.
                         </p>
                     </article>
 
-                    <article class="reveal rounded-[1.75rem] border border-line bg-paper p-8 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-luxe">
-                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-bronze">Planning Model</p>
-                        <h3 class="mt-5 font-serif text-3xl font-semibold text-ink">Full-Service Only</h3>
-                        <p class="mt-4 leading-8 text-taupe">
+                    <article class="reveal card">
+                        <p class="card__label">Planning Model</p>
+                        <h3>Full-Service Only</h3>
+                        <p>
                             We do not offer day-of-only or partial coordination. Every wedding is managed as a complete
                             service so the standard remains consistent at every stage.
                         </p>
                     </article>
 
-                    <article class="reveal rounded-[1.75rem] border border-line bg-paper p-8 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-luxe">
-                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-bronze">Region Served</p>
-                        <h3 class="mt-5 font-serif text-3xl font-semibold text-ink">Noida & Delhi NCR</h3>
-                        <p class="mt-4 leading-8 text-taupe">
+                    <article class="reveal card">
+                        <p class="card__label">Region Served</p>
+                        <h3>Noida &amp; Delhi NCR</h3>
+                        <p>
                             We serve couples planning refined celebrations in Noida, across Delhi NCR, and selected
                             destination wedding locations based on fit and scope.
                         </p>
@@ -277,40 +266,36 @@
             </div>
         </section>
 
-        <section class="border-t border-line">
-            <div class="mx-auto max-w-7xl px-6 py-20 md:px-10 lg:px-16">
-                <div class="reveal max-w-3xl">
-                    <p class="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-bronze md:text-sm">
-                        How It Works
-                    </p>
-                    <h2 class="font-serif text-4xl font-semibold leading-tight tracking-[-0.03em] md:text-5xl">
-                        A three-step process built to feel reassuring, refined, and brilliantly organized.
-                    </h2>
+        <section class="section">
+            <div class="container">
+                <div class="reveal section-head">
+                    <p class="eyebrow">How It Works</p>
+                    <h2>A three-step process built to feel reassuring, refined, and brilliantly organized.</h2>
                 </div>
 
-                <div class="mt-14 grid gap-8 lg:grid-cols-3">
-                    <article class="reveal rounded-[1.75rem] border border-line bg-paper p-8 shadow-soft">
-                        <span class="font-serif text-5xl text-gold">01</span>
-                        <h3 class="mt-6 font-serif text-3xl font-semibold text-ink">Clarify the Vision</h3>
-                        <p class="mt-4 leading-8 text-taupe">
+                <div class="card-grid card-grid--3">
+                    <article class="reveal card">
+                        <span class="card__step">01</span>
+                        <h3>Clarify the Vision</h3>
+                        <p>
                             We begin by understanding your style, priorities, guest experience goals, family dynamics,
                             and practical constraints so nothing important is lost in translation.
                         </p>
                     </article>
 
-                    <article class="reveal rounded-[1.75rem] border border-line bg-paper p-8 shadow-soft">
-                        <span class="font-serif text-5xl text-gold">02</span>
-                        <h3 class="mt-6 font-serif text-3xl font-semibold text-ink">Curate & Design</h3>
-                        <p class="mt-4 leading-8 text-taupe">
+                    <article class="reveal card">
+                        <span class="card__step">02</span>
+                        <h3>Curate &amp; Design</h3>
+                        <p>
                             We lead vendor curation, event design, timeline management, hospitality planning, and
                             bespoke catering coordination so every choice feels aligned, elevated, and intentional.
                         </p>
                     </article>
 
-                    <article class="reveal rounded-[1.75rem] border border-line bg-paper p-8 shadow-soft">
-                        <span class="font-serif text-5xl text-gold">03</span>
-                        <h3 class="mt-6 font-serif text-3xl font-semibold text-ink">Execute with Precision</h3>
-                        <p class="mt-4 leading-8 text-taupe">
+                    <article class="reveal card">
+                        <span class="card__step">03</span>
+                        <h3>Execute with Precision</h3>
+                        <p>
                             As the wedding approaches, we manage details, vendors, and day-of coordination with quiet
                             control, allowing you and your family to experience the celebration instead of managing it.
                         </p>
@@ -319,86 +304,139 @@
             </div>
         </section>
 
-        <section class="border-t border-line bg-paper/70">
-            <div class="mx-auto max-w-7xl px-6 py-20 md:px-10 lg:px-16">
-                <div class="reveal max-w-3xl">
-                    <p class="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-bronze md:text-sm">
-                        Social Proof
-                    </p>
-                    <h2 class="font-serif text-4xl font-semibold leading-tight tracking-[-0.03em] md:text-5xl">
-                        The result is not just a beautiful wedding. It is the rare feeling that every detail was under control.
-                    </h2>
+        <section class="section section--tint">
+            <div class="container">
+                <div class="reveal section-head">
+                    <p class="eyebrow">Social Proof</p>
+                    <h2>The result is not just a beautiful wedding. It is the rare feeling that every detail was under
+                        control.</h2>
                 </div>
 
-                <div class="mt-14 grid gap-6 lg:grid-cols-12">
-                    <div class="grid gap-6 md:grid-cols-2 lg:col-span-7">
-                        <div class="reveal overflow-hidden rounded-[1.75rem] shadow-soft">
-                            <img src="images/rt 1.jpg" alt="Royal wedding ceremony setup"
-                                class="aspect-[4/5] w-full object-cover transition duration-700 hover:scale-[1.02]">
-                        </div>
-                        <div class="reveal overflow-hidden rounded-[1.75rem] shadow-soft md:mt-12">
-                            <img src="images/rt 11.jpg" alt="Haldi event styling by Royal Tales"
-                                class="aspect-[4/5] w-full object-cover transition duration-700 hover:scale-[1.02]">
-                        </div>
+                <div class="proof">
+                    <div class="proof__gallery">
+                        <figure class="reveal">
+                            <img src="images/rt 1.jpg" alt="Royal Tales wedding ceremony setup" loading="lazy"
+                                decoding="async">
+                        </figure>
+                        <figure class="reveal">
+                            <img src="images/rt 11.jpg" alt="Haldi event styling by Royal Tales" loading="lazy"
+                                decoding="async">
+                        </figure>
                     </div>
 
-                    <div class="space-y-6 lg:col-span-5">
-                        <blockquote class="reveal rounded-[1.75rem] border border-line bg-paper p-8 shadow-soft">
-                            <p class="font-serif text-2xl leading-relaxed text-ink">
-                                “For the first time during our engagement, we felt like we could enjoy each other instead of managing a production schedule.”
-                            </p>
-                            <footer class="mt-6 text-xs font-semibold uppercase tracking-[0.24em] text-taupe">
-                                Couple married in Noida
-                            </footer>
+                    <div class="proof__quotes">
+                        <blockquote class="reveal quote">
+                            <p>“For the first time during our engagement, we felt like we could enjoy each other instead
+                                of managing a production schedule.”</p>
+                            <footer>Couple married in Noida</footer>
                         </blockquote>
 
-                        <blockquote class="reveal rounded-[1.75rem] border border-line bg-paper p-8 shadow-soft">
-                            <p class="font-serif text-2xl leading-relaxed text-ink">
-                                “Every transition felt effortless. Guests experienced beauty. We experienced calm. That is the real luxury.”
-                            </p>
-                            <footer class="mt-6 text-xs font-semibold uppercase tracking-[0.24em] text-taupe">
-                                Full-service Royal Tales client
-                            </footer>
+                        <blockquote class="reveal quote">
+                            <p>“Every transition felt effortless. Guests experienced beauty. We experienced calm. That is
+                                the real luxury.”</p>
+                            <footer>Full-service Royal Tales client</footer>
                         </blockquote>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="availability" class="border-t border-line">
-            <div class="mx-auto max-w-7xl px-6 py-20 md:px-10 lg:px-16">
-                <div class="reveal rounded-[2rem] bg-ink px-8 py-14 text-paper shadow-luxe md:px-14 md:py-20">
-                    <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+        <section class="section">
+            <div class="container">
+                <div class="reveal section-head">
+                    <p class="eyebrow">Before You Message Us</p>
+                    <h2>Questions couples ask before checking their date.</h2>
+                </div>
+
+                <div class="faq-list">
+                    <details class="reveal faq-item">
+                        <summary>What is included in your full-service wedding management?</summary>
+                        <div class="faq-item__answer">
+                            Vendor curation, event design, timeline management, hospitality and bespoke catering
+                            coordination, and day-of coordination. We take ownership of the execution end to end, so you
+                            are not the one managing vendors or schedules.
+                        </div>
+                    </details>
+
+                    <details class="reveal faq-item">
+                        <summary>Why do you only offer full-service planning?</summary>
+                        <div class="faq-item__answer">
+                            We do not offer day-of-only or partial coordination. When we are involved from the beginning,
+                            the design, logistics, and vendor relationships hold together as one plan. Partial
+                            involvement makes that standard impossible to guarantee.
+                        </div>
+                    </details>
+
+                    <details class="reveal faq-item">
+                        <summary>What is the minimum investment?</summary>
+                        <div class="faq-item__answer">
+                            Our weddings begin at a planning budget of ₹15 Lakhs. That threshold reflects the scope of an
+                            elevated, professionally managed celebration from start to finish.
+                        </div>
+                    </details>
+
+                    <details class="reveal faq-item">
+                        <summary>How far in advance should we book?</summary>
+                        <div class="faq-item__answer">
+                            We accept weddings with at least six months of lead time, so the planning, design, and
+                            logistical details can be shaped properly rather than rushed.
+                        </div>
+                    </details>
+
+                    <details class="reveal faq-item">
+                        <summary>Which locations do you serve?</summary>
+                        <div class="faq-item__answer">
+                            Noida and Delhi NCR, plus selected destination wedding locations depending on fit and scope.
+                        </div>
+                    </details>
+
+                    <details class="reveal faq-item">
+                        <summary>What happens after I message you?</summary>
+                        <div class="faq-item__answer">
+                            We start by confirming whether your date and scope are a fit. From there the process moves
+                            through clarifying the vision, curating and designing the celebration, and executing it with
+                            day-of coordination.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section id="availability" class="section">
+            <div class="container">
+                <div class="reveal cta-panel">
+                    <div class="cta-panel__grid">
                         <div>
-                            <p class="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-sand md:text-sm">
-                                Check Your Date's Availability
-                            </p>
-                            <h2 class="max-w-3xl font-serif text-4xl font-semibold leading-tight tracking-[-0.03em] md:text-5xl">
-                                If you want the wedding to feel seamless, the next step is confirming whether your date and scope are a fit.
-                            </h2>
-                            <p class="mt-6 max-w-2xl text-base leading-8 text-[#E9E1D8] md:text-lg">
+                            <p class="eyebrow">Check Your Date's Availability</p>
+                            <h2>If you want the wedding to feel seamless, the next step is confirming whether your date
+                                and scope are a fit.</h2>
+                            <p class="cta-panel__lede">
                                 We reserve a limited number of full-service weddings each season for couples planning in
-                                Noida and Delhi NCR with a starting investment of ₹15 Lakhs and a minimum six-month lead time.
+                                Noida and Delhi NCR with a starting investment of ₹15 Lakhs and a minimum six-month lead
+                                time.
                             </p>
                         </div>
 
-                        <div class="rounded-[1.75rem] border border-white/10 bg-white/5 p-7 backdrop-blur">
-                            <ul class="space-y-4 text-sm uppercase tracking-[0.16em] text-[#E9E1D8]">
+                        <div class="cta-panel__box">
+                            <ul>
                                 <li>Starting budget: ₹15 Lakhs+</li>
                                 <li>Lead time: 6 months minimum</li>
                                 <li>Service type: Full-service planning only</li>
-                                <li>Region: Noida & Delhi NCR</li>
+                                <li>Region: Noida &amp; Delhi NCR</li>
                             </ul>
-                            <div class="mt-8 flex flex-col gap-4">
-                                <a href="contact.html"
-                                    class="inline-flex items-center justify-center rounded-full bg-paper px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-ink shadow-luxe transition duration-300 hover:-translate-y-0.5 hover:bg-sand">
-                                    Check Your Date's Availability
-                                </a>
-                                <a href="https://wa.me/+919211453330"
-                                    class="inline-flex items-center justify-center rounded-full border border-white/20 px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-paper transition duration-300 hover:border-sand hover:text-sand">
+                            <div class="cta-panel__actions">
+                                <a href="https://wa.me/919211453330?text=Hi%20Royal%20Tales%2C%20I%20would%20like%20to%20check%20your%20availability%20for%20my%20wedding%20date."
+                                    target="_blank" rel="noopener" class="btn btn--light">
+                                    <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
+                                    </svg>
                                     Message On WhatsApp
                                 </a>
+                                <a href="tel:+919211453330" class="btn btn--ghost">Call +91 92114 53330</a>
                             </div>
+                            <p class="cta-panel__reassurance">
+                                No forms to fill in. Send your wedding date and we will tell you if it is open.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -406,54 +444,45 @@
         </section>
     </main>
 
-    <footer class="border-t border-line bg-paper/80">
-        <div class="mx-auto max-w-7xl px-6 py-12 md:px-10 lg:px-16">
-            <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+    <footer class="lp-footer">
+        <div class="container">
+            <div class="lp-footer__grid">
                 <div>
-                    <img src="images/The RoyalTales logo.png" alt="Royal Tales logo" class="h-12 w-auto">
-                    <p class="mt-4 max-w-sm text-sm leading-7 text-taupe">
+                    <img src="images/The RoyalTales logo.png" alt="Royal Tales" loading="lazy" width="180" height="56">
+                    <p>
                         Premium wedding event management for couples who want elegance, clarity, and flawless
                         full-service execution.
                     </p>
                 </div>
                 <div>
-                    <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-ink">Location</h3>
-                    <p class="mt-4 text-sm leading-7 text-taupe">
-                        Flat 1781, Tower-1, Gaur Grandeur, Sector 119, Noida, Uttar Pradesh 201301
-                    </p>
+                    <h3>Location</h3>
+                    <p>Flat 1781, Tower-1, Gaur Grandeur, Sector 119, Noida, Uttar Pradesh 201301</p>
                 </div>
                 <div>
-                    <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-ink">Contact</h3>
-                    <p class="mt-4 text-sm leading-7 text-taupe">
-                        <a href="tel:+919211453330" class="transition hover:text-ink">+91 9211453330</a><br>
-                        <a href="mailto:info@royaltales.in" class="transition hover:text-ink">info@royaltales.in</a>
+                    <h3>Contact</h3>
+                    <p>
+                        <a href="tel:+919211453330">+91 92114 53330</a><br>
+                        <a href="mailto:info@royaltales.in">info@royaltales.in</a>
                     </p>
-                </div>
-                <div>
-                    <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-ink">Quick Links</h3>
-                    <div class="mt-4 flex flex-col gap-3 text-sm text-taupe">
-                        <a href="index.html" class="transition hover:text-ink">Home</a>
-                        <a href="About Us.html" class="transition hover:text-ink">About</a>
-                        <a href="event-blog.html" class="transition hover:text-ink">Blogs</a>
-                        <a href="contact.html" class="transition hover:text-ink">Contact</a>
-                    </div>
                 </div>
             </div>
-            <div class="mt-10 border-t border-line pt-6 text-sm text-taupe">
+            <div class="lp-footer__legal">
                 <p>Copyright © 2026 Royal Tales. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        const revealElements = document.querySelectorAll('.reveal');
-        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        (function () {
+            var revealElements = document.querySelectorAll('.reveal');
 
-        if (reducedMotion) {
-            revealElements.forEach((element) => element.classList.add('is-visible'));
-        } else {
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach((entry) => {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+                revealElements.forEach(function (element) { element.classList.add('is-visible'); });
+                return;
+            }
+
+            var observer = new IntersectionObserver(function (entries, obs) {
+                entries.forEach(function (entry) {
                     if (!entry.isIntersecting) {
                         return;
                     }
@@ -466,8 +495,8 @@
                 rootMargin: '0px 0px -40px 0px'
             });
 
-            revealElements.forEach((element) => observer.observe(element));
-        }
+            revealElements.forEach(function (element) { observer.observe(element); });
+        })();
     </script>
 </body>
 
