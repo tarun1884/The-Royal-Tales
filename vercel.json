@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/luxury-wedding-planner-noida.html",
+      "destination": "/luxury-wedding-planner.html",
+      "statusCode": 301
+    }
+  ]
+}
