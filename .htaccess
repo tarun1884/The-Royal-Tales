@@ -17,8 +17,13 @@ RewriteCond %{HTTP_HOST} !^royaltales\.in$ [NC]
 RewriteRule ^ https://royaltales.in%{REQUEST_URI} [R=301,L]
 
 # 1. Redirect explicit .html requests to the clean URL (301 redirect)
+#    NE (noescape) is required: THE_REQUEST holds the raw request line, so %1
+#    captures already-encoded text like "About%20Us". Without NE, mod_rewrite
+#    escapes that % again into %25 and sends the browser to /About%2520Us,
+#    which decodes to a filename that does not exist -- a 404 on every page
+#    whose name contains a space.
 RewriteCond %{THE_REQUEST} \s/([^.]+)\.html [NC]
-RewriteRule ^ %1 [R=301,L]
+RewriteRule ^ %1 [R=301,L,NE]
 
 # 2. Internally rewrite clean URLs (without extension) to .html files
 RewriteCond %{REQUEST_FILENAME} !-d
