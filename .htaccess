@@ -16,16 +16,38 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 RewriteCond %{HTTP_HOST} !^royaltales\.in$ [NC]
 RewriteRule ^ https://royaltales.in%{REQUEST_URI} [R=301,L]
 
-# 1. Redirect explicit .html requests to the clean URL (301 redirect)
-#    NE (noescape) is required: THE_REQUEST holds the raw request line, so %1
-#    captures already-encoded text like "About%20Us". Without NE, mod_rewrite
-#    escapes that % again into %25 and sends the browser to /About%2520Us,
-#    which decodes to a filename that does not exist -- a 404 on every page
-#    whose name contains a space.
+# 1. Legacy URLs: these pages used to have spaces in their filenames, which
+#    produced %20 in every URL and broke the clean-URL rewrite below. They are
+#    now lowercase and hyphenated. Each old path -- with or without .html --
+#    is 301'd to its new home so existing links and bookmarks keep working.
+#
+#    Spaces in the pattern must be backslash-escaped: a RewriteRule's fields are
+#    whitespace-delimited, so a bare space would end the pattern early.
+#
+#    These run before the .html rule below so an old request redirects straight
+#    to its new URL in one hop rather than two.
+RewriteRule ^10\ Trending\ Wedding\ Themes(\.html)?$ /10-trending-wedding-themes [R=301,L,NC]
+RewriteRule ^About\ Us(\.html)?$ /about-us [R=301,L,NC]
+RewriteRule ^Creating\ Memorable\ Corporate\ Events\ on\ a\ Budget(\.html)?$ /creating-memorable-corporate-events-on-a-budget [R=301,L,NC]
+RewriteRule ^Destination\ Wedding\ in\ Udaipur\ Cost(\.html)?$ /destination-wedding-in-udaipur-cost [R=301,L,NC]
+RewriteRule ^Modern\ Anniversary\ Celebration\ Ideas(\.html)?$ /modern-anniversary-celebration-ideas [R=301,L,NC]
+RewriteRule ^Planning\ the\ Perfect\ Outdoor\ Wedding(\.html)?$ /planning-the-perfect-outdoor-wedding [R=301,L,NC]
+RewriteRule ^Pre\ Wedding\ Events\ That\ Make\ a\ Big\ Impact(\.html)?$ /pre-wedding-events-that-make-a-big-impact [R=301,L,NC]
+RewriteRule ^Should\ You\ Hire\ a\ Wedding\ Planner(\.html)?$ /should-you-hire-a-wedding-planner [R=301,L,NC]
+RewriteRule ^Sustainable\ Event\ Planning\ Tips(\.html)?$ /sustainable-event-planning-tips [R=301,L,NC]
+RewriteRule ^Top\ 10\ Beach\ Wedding\ Resorts\ in\ India(\.html)?$ /top-10-beach-wedding-resorts-in-india [R=301,L,NC]
+RewriteRule ^Unique\ Birthday\ Party\ Ideas\ for\ Every\ Age(\.html)?$ /unique-birthday-party-ideas-for-every-age [R=301,L,NC]
+RewriteRule ^test\ blog(\.html)?$ /test-blog [R=301,L,NC]
+
+# 2. Redirect explicit .html requests to the clean URL (301 redirect)
+#    NE (noescape) is kept as a safeguard: THE_REQUEST holds the raw request
+#    line, so %1 can capture already-encoded text. Without NE, mod_rewrite would
+#    escape a % again into %25 and send the browser somewhere that does not
+#    exist. No filename contains a space any more, but the flag costs nothing.
 RewriteCond %{THE_REQUEST} \s/([^.]+)\.html [NC]
 RewriteRule ^ %1 [R=301,L,NE]
 
-# 2. Internally rewrite clean URLs (without extension) to .html files
+# 3. Internally rewrite clean URLs (without extension) to .html files
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^([^/]+)/?$ $1.html [L]
