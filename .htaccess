@@ -51,3 +51,13 @@ RewriteRule ^ %1 [R=301,L,NE]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^([^/]+)/?$ $1.html [L]
+
+# 4. Always revalidate HTML so a content change reaches visitors immediately.
+#    Without this the host sends no Cache-Control for pages, and browsers fall
+#    back to heuristic caching -- which is why edited pages kept appearing stale.
+#    Static assets are left alone so they stay cached and fast.
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
