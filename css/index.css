@@ -2162,3 +2162,87 @@ footer .container,
         justify-content: flex-start;
     }
 }
+
+/* =======================================================================
+   Mobile layout corrections
+   ======================================================================= */
+
+@media (max-width: 991px) {
+
+    /* Navigation
+       A correct `.nav-menu { display: none }` already exists in the 768px
+       block above, but an unscoped `.nav-menu { display: flex }` appears
+       later in this file and overrides it, so the desktop link row rendered
+       on phones. At 410px it measured 474px wide: it overflowed the page by
+       35px and pushed the hamburger past the right edge, where it could not
+       be tapped. Re-assert the mobile state after that rule. */
+    .nav-menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        flex: 0 0 auto;
+    }
+
+    .nav-container {
+        flex: 1 1 auto;
+        justify-content: flex-end;
+    }
+
+    /* Hero order
+       `.hero-image` carried `order: -1`, so the photo and its two stat cards
+       came first and pushed the <h1> down to 855px -- below the bottom of an
+       812px screen. Visitors met a picture before a single word about the
+       business. Lead with the headline, then show the photo. */
+    .hero-content {
+        order: -1;
+    }
+
+    .hero-image {
+        order: 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Stat cards
+       Stacked full width these two cards took roughly 300px of height for
+       four short lines of text. Side by side under the photo they read as a
+       quick credibility strip and give the headline room above the fold. */
+    .hero-image {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .hero-image img {
+        flex: 1 0 100%;
+        margin: 0;
+    }
+
+    .floating-card {
+        position: static;
+        flex: 1 1 0;
+        min-width: 0;
+        margin: 0;
+        padding: 14px 10px;
+        text-align: center;
+    }
+
+    .floating-card h4 {
+        margin: 0 0 2px;
+    }
+
+    .floating-card p {
+        margin: 0;
+        font-size: 0.78rem;
+        line-height: 1.35;
+    }
+
+    /* Nothing should be able to scroll the page sideways on a phone. */
+    html,
+    body {
+        overflow-x: hidden;
+    }
+}
