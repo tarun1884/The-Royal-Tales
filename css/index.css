@@ -2246,3 +2246,78 @@ footer .container,
         overflow-x: hidden;
     }
 }
+
+/* =======================================================================
+   Floating social buttons
+   Instagram and Facebook stack above the existing WhatsApp button, reusing
+   its size and shadow so the three read as one control. Offsets are derived
+   from the WhatsApp button: 60px tall + 10px gap on desktop, 55px + 10px on
+   mobile, so the stack stays aligned if that button is ever resized.
+   ======================================================================= */
+
+.social-float {
+    position: fixed;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-float svg {
+    width: 28px;
+    height: 28px;
+    fill: #fff;
+}
+
+.social-float:hover {
+    transform: scale(1.08);
+}
+
+.social-float--instagram {
+    bottom: 100px;
+    background: linear-gradient(45deg, #f09433, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888);
+    box-shadow: 0 8px 25px rgba(220, 39, 67, 0.3);
+}
+
+.social-float--facebook {
+    bottom: 170px;
+    background: linear-gradient(135deg, #1877f2, #0b5fce);
+    box-shadow: 0 8px 25px rgba(24, 119, 242, 0.3);
+}
+
+@media (max-width: 768px) {
+    .social-float {
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+
+    .social-float svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .social-float--instagram {
+        bottom: 85px;
+    }
+
+    .social-float--facebook {
+        bottom: 150px;
+    }
+}
+
+/* Contact details must render exactly as typed. A heading-level
+   text-transform: capitalize rule in style.css was rendering the footer
+   address as Royaltaleseventmanagement@Gmail.Com. */
+.footer-contact-content h6,
+.footer-contact-content h6 a,
+a[href^="mailto:"],
+a[href^="tel:"] {
+    text-transform: none;
+}

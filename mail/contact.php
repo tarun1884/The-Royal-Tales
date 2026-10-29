@@ -1,5 +1,5 @@
 <?php
-$to = "tarunsharmadelhi2003@gmail.com";  // replace with your email
+$to = "royaltaleseventmanagement@gmail.com";  // business enquiry inbox
 
 // Collect POST data
 $first_name = $_POST['first_name'] ?? $_POST['fname'] ?? '';
