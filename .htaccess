@@ -39,6 +39,12 @@ RewriteRule ^Top\ 10\ Beach\ Wedding\ Resorts\ in\ India(\.html)?$ /top-10-beach
 RewriteRule ^Unique\ Birthday\ Party\ Ideas\ for\ Every\ Age(\.html)?$ /unique-birthday-party-ideas-for-every-age [R=301,L,NC]
 RewriteRule ^test\ blog(\.html)?$ /test-blog [R=301,L,NC]
 
+# 1b. Retired blog posts. These three were removed; send their old URLs to the
+#     blog index rather than letting them 404 for anyone holding a link.
+RewriteRule ^creating-memorable-corporate-events-on-a-budget(\.html)?$ /event-blog [R=301,L,NC]
+RewriteRule ^unique-birthday-party-ideas-for-every-age(\.html)?$ /event-blog [R=301,L,NC]
+RewriteRule ^planning-the-perfect-outdoor-wedding(\.html)?$ /event-blog [R=301,L,NC]
+
 # 2. Redirect explicit .html requests to the clean URL (301 redirect)
 #    NE (noescape) is kept as a safeguard: THE_REQUEST holds the raw request
 #    line, so %1 can capture already-encoded text. Without NE, mod_rewrite would
